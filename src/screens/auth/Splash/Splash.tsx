@@ -1,12 +1,14 @@
 import React from 'react';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Image, Pressable, StatusBar, Text, View } from 'react-native';
 import Style from './Style';
 import Button from '../../../components/Button/Button';
+import { colors } from '../../../theme/colors';
 
 function Splash() {
     return (
         <>
             <View style={Style.container}>
+                <StatusBar backgroundColor={colors.WHITE} barStyle={'dark-content'} />
                 <Image resizeMode="contain" style={Style.image} source={require('../../../assets/splash_image.png')} />
 
                 <View style={Style.titleContainer}>

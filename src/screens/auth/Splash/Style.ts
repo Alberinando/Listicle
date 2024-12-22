@@ -24,7 +24,6 @@ const Style = StyleSheet.create({
     },
     innertitle: {
         color: colors.ORANGE,
-        textDecorationLine: 'underline',
         fontSize: 35,
         fontWeight: 'bold',
         textAlign: 'center',
