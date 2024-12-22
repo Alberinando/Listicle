@@ -1,11 +1,11 @@
 import React from 'react';
-import Splash from './src/screens/auth/Splash/Splash';
 import { StyleSheet, View } from 'react-native';
+import Signup from './src/screens/auth/Signup/Signup';
 
 function App(): React.JSX.Element {
   return (
     <View style={Style.container}>
-      <Splash />
+      <Signup />
     </View>
   );
 }
