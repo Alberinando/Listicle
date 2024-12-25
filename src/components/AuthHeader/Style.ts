@@ -3,6 +3,9 @@ import { colors } from '../../theme/colors';
 
 const Style = StyleSheet.create({
     container: {
+        marginBottom: 54,
+    },
+    pressableContainer: {
         flexDirection: 'row',
         alignItems: 'center',
     },
@@ -12,7 +15,7 @@ const Style = StyleSheet.create({
     },
     title: {
         color: colors.BLUE,
-        fontSize: 26,
+        fontSize: 18,
         fontWeight: '500',
         paddingHorizontal: 16,
     },
