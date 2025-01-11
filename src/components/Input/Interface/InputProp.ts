@@ -1,5 +1,6 @@
 export interface InputProp {
     label: string;
-    placeholder: string;
     isPassword?: boolean;
+    placeholder?: string;
+    onChangeText?: (text: string) => void;
 }

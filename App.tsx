@@ -1,20 +1,13 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Signup from './src/screens/auth/Signup/Signup';
+import Routes from './src/routers/Router';
+import { AuthProvider } from './src/context/Auth';
 
 function App(): React.JSX.Element {
   return (
-    <View style={Style.container}>
-      <Signup />
-    </View>
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   );
 }
 
 export default App;
-
-const Style = StyleSheet.create({
-    container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-    },
-});

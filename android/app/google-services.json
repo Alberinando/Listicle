@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "615661039198",
+    "project_id": "listicle-b7497",
+    "storage_bucket": "listicle-b7497.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615661039198:android:14e1fc7bd04fc76ddececf",
+        "android_client_info": {
+          "package_name": "com.alberinando.listicle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAWw-db3fIKnm88qw5NNJZY9I07slrqVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615661039198:android:5faa4155a7f3089adececf",
+        "android_client_info": {
+          "package_name": "com.listicle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAWw-db3fIKnm88qw5NNJZY9I07slrqVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,11 +1,13 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../../theme/colors';
 
-const Style = StyleSheet.create({
+export const Style = StyleSheet.create({
+    containerView: {
+        flex: 1,
+    },
     container: {
         padding: 24,
         backgroundColor: colors.WHITE,
-        flex: 1,
     },
     agreeRow: {
         flexDirection: 'row',
@@ -30,5 +32,3 @@ const Style = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
-
-export default Style;
