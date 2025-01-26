@@ -5,10 +5,10 @@ import { CheckBoxProps } from './Interface/CheckBoxProps';
 
 const Checkbox: React.FC<CheckBoxProps> = ({ checked, onCheck }) => {
     return (
-        <TouchableOpacity activeOpacity={0.6} onPress={() => onCheck(!checked)} style={Style.container}>
+        <TouchableOpacity activeOpacity={0.6} onPress={() => onCheck(!checked)} style={Style.container} testID="checkbox-container">
             {checked ? (
                 <View style={Style.innerContainer}>
-                    <Image style={Style.checkIcon} source={require('../../assets/check.png')} />
+                    <Image style={Style.checkIcon} source={require('../../assets/check.png')} testID="checkbox-icon" />
                 </View>
             ) : null}
         </TouchableOpacity>

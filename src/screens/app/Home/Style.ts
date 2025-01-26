@@ -6,4 +6,13 @@ export const Style = StyleSheet.create({
         padding: 24,
         backgroundColor: colors.WHITE,
     },
+    loading: {
+        flex: 1,
+        backgroundColor: colors.WHITE,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    list: {
+        paddingVertical: 24
+    },
 });

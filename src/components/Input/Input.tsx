@@ -35,9 +35,15 @@ const Input: React.FC<InputProp> = ({
 
   return (
     <View style={Style.container}>
-      <Text style={Style.label}>{label}</Text>
+      {label && <Text style={Style.label} accessibilityRole="text">{label}</Text>}
       {type === 'picker' ? (
-        <Pressable onPress={() => setPickerModalVisible(true)} style={Style.inputContainer}>
+        <Pressable
+          onPress={() => setPickerModalVisible(true)}
+          style={Style.inputContainer}
+          accessibilityRole="button"
+          accessibilityLabel={label || 'Open picker'}
+          accessibilityHint="Opens a modal to select an option"
+        >
           {typeof value === 'object' && value ? (
             <Text style={[Style.input, style]}>{value.title}</Text>
           ) : (
@@ -53,10 +59,13 @@ const Input: React.FC<InputProp> = ({
             onChangeText={handleChangeText}
             secureTextEntry={isPassword && !isPasswordVisible}
             style={[Style.input, style]}
+            accessibilityRole="text"
+            accessibilityLabel={label}
+            accessibilityHint={isPassword ? 'Input field with password visibility toggle' : undefined}
             {...props}
           />
           {isPassword ? (
-            <Pressable onPress={onEyePress}>
+            <Pressable onPress={onEyePress} accessibilityRole="button" accessibilityLabel="Toggle password visibility">
               <Image
                 style={Style.eye}
                 source={isPasswordVisible ? require('../../assets/eye.png') : require('../../assets/eye_closed.png')}
@@ -66,10 +75,10 @@ const Input: React.FC<InputProp> = ({
         </View>
       )}
 
-      <Modal transparent visible={isPickerModalVisible}>
+      <Modal transparent visible={isPickerModalVisible} accessibilityViewIsModal accessibilityLabel="Picker options">
         <TouchableOpacity activeOpacity={1} onPress={() => setPickerModalVisible(false)} style={Style.modalWrapper}>
           <TouchableOpacity activeOpacity={1} style={Style.modalContent}>
-            <Text style={Style.headerTitle}>Select options</Text>
+            <Text style={Style.headerTitle} accessibilityRole="header">Select options</Text>
             {options?.map((opt) => {
               if (!opt?.id) {
                 return null;
@@ -80,6 +89,8 @@ const Input: React.FC<InputProp> = ({
                   onPress={() => onSelect(opt)}
                   style={[Style.optionText, selected ? Style.selectedOption : {}]}
                   key={opt.id}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Option: ${opt.title}`}
                 >
                   {opt.title}
                 </Text>

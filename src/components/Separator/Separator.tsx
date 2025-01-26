@@ -6,9 +6,9 @@ import { Style } from './Style';
 const Separator:React.FC<SeparatorProp> = ({ text }) => {
     return (
        <View style={Style.container}>
-            <View style={Style.line} />
+            <View style={Style.line} testID="line-element" />
             <Text style={Style.text}>{text}</Text>
-            <View style={Style.line} />
+            <View style={Style.line} testID="line-element" />
        </View>
     );
 };
