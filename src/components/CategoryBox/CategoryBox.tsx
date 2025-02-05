@@ -9,8 +9,8 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({ title, image, onPress, isFirs
     const localImage = imageMap[image];
     return (
         <Pressable onPress={onPress} style={[Style.container, isFirst ? Style.pressableOption : {}]}>
-            <View style={[Style.imageContainer, isSelected ? { backgroundColor: colors.BLACK } : {}]}>
-                <Image style={Style.image} source={localImage} />
+            <View style={[Style.imageContainer, isSelected ? { backgroundColor: colors.DARKGREY } : {}]}>
+                <Image style={Style.image} source={localImage} resizeMode="contain" />
             </View>
             <Text style={[Style.title, isSelected ? Style.textOption : {}]}>{title}</Text>
         </Pressable>

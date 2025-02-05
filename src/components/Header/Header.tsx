@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ title, onBackPress, onLogout, showLogou
             </View>
 
             {showSearchInput ? (
-                <Input onChangeText={onSearch} value={keyword} placeholder="Type your keyword..." />
+                <Input onChangeText={onSearch} value={keyword} placeholder="Busque um produto" />
             ) : null}
         </View>
     );

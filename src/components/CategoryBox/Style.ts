@@ -7,6 +7,7 @@ export const Style = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf:'center',
     },
     title: {
         color: colors.GREY,
@@ -22,7 +23,7 @@ export const Style = StyleSheet.create({
         marginBottom: 8,
     },
     pressableOption: {
-        marginLeft: 24,
+        // marginLeft: 24,
     },
     textOption: {
         color: colors.BLUE,

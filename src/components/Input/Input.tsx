@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Pressable, Text, TextInput, View, Image, Modal, TouchableOpacity } from 'react-native';
 import { Style } from './Style';
 import { InputProp, Option } from './Interface/InputProp';
+import { colors } from '../../theme/colors';
 
 const Input: React.FC<InputProp> = ({
   label,
@@ -55,6 +56,7 @@ const Input: React.FC<InputProp> = ({
         <View style={Style.inputContainer}>
           <TextInput
             placeholder={placeholder}
+            placeholderTextColor={colors.TEXTGREY}
             value={textValue}
             onChangeText={handleChangeText}
             secureTextEntry={isPassword && !isPasswordVisible}

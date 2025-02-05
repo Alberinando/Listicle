@@ -4,7 +4,7 @@ export interface HeaderProps {
     onLogout?: () => void;
     showLogout?: boolean;
     showSearch?: boolean;
-    onSearch?: () => void;
+    onSearch: (text: string) => void;
     keyword?: string;
     showBack?: boolean;
 }
