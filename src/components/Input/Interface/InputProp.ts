@@ -14,4 +14,5 @@ export interface InputProp {
   style?: StyleProp<ViewStyle>;
   type?: 'text' | 'picker';
   options?: Option[];
+  capitalize?: boolean;
 }

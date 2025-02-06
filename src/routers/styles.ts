@@ -12,6 +12,10 @@ const Style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    bg: {
+        flex: 1,
+        backgroundColor: colors.WHITE,
+    },
 });
 
 export default Style;

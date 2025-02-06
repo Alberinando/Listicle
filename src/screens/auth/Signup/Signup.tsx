@@ -83,7 +83,7 @@ function SignUp() {
             <AuthHeader title={'Voltar'} onBackPress={handlePressBack} />
 
             <Input label="Nome" placeholder="Seu nome" value={name} onChangeText={setName} />
-            <Input label="E-mail" placeholder="seuemail@example.com" value={email} onChangeText={setEmail} />
+            <Input capitalize label="E-mail" placeholder="seuemail@example.com" value={email} onChangeText={setEmail} />
             <Input label="Senha" placeholder="********" isPassword value={password} onChangeText={setPassword} />
 
             <View style={Style.agreeRow} hitSlop={10}>

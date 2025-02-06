@@ -3,5 +3,5 @@ export interface ProductHomeItemProps{
     price: string;
     image: string;
     images?: string[];
-    onPress: () => void;
+    onPress?: () => void;
 }

@@ -13,6 +13,7 @@ const Input: React.FC<InputProp> = ({
   onChangeText,
   placeholder,
   style,
+  capitalize,
   ...props
 }) => {
   const [textValue, setTextValue] = useState<string>(typeof value === 'object' && value ? value.title : (typeof value === 'string' ? value : ''));
@@ -63,6 +64,7 @@ const Input: React.FC<InputProp> = ({
             style={[Style.input, style]}
             accessibilityRole="text"
             accessibilityLabel={label}
+            autoCapitalize={capitalize ? 'none' : 'sentences'}
             accessibilityHint={isPassword ? 'Input field with password visibility toggle' : undefined}
             {...props}
           />

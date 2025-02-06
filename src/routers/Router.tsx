@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, StatusBar, View } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import { useAuth } from '../context/Auth';
 import { colors } from '../theme/colors';
@@ -31,17 +31,21 @@ function Routes() {
 
     if (initializing) {
         return (
-            <View style={Style.loading}>
-                <ActivityIndicator color={colors.BLUE} />
-            </View>
+            <>
+                <StatusBar backgroundColor={colors.WHITE} barStyle={'dark-content'} /><View style={Style.loading}>
+                    <ActivityIndicator color={colors.BLUE} />
+                </View>
+            </>
         );
     }
 
     return (
-        <NavigationContainer theme={theme}>
-            {/* Render appropriate routes based on the authentication state */}
-            {Auth ? <AppTabs /> : <AuthRoutes />}
-        </NavigationContainer>
+        <View style={Style.bg}>
+            <NavigationContainer theme={theme}>
+                {/* Render appropriate routes based on the authentication state */}
+                {Auth ? <AppTabs /> : <AuthRoutes />}
+            </NavigationContainer>
+        </View>
     );
 }
 

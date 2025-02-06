@@ -55,7 +55,7 @@ const Signin = () => {
                 <StatusBar backgroundColor={colors.WHITE} barStyle={'dark-content'} />
                 <AuthHeader onBackPress={handlePressBack} title="Fazer login" />
 
-                <Input label="E-mail" placeholder="example@gmail.com" onChangeText={onChangeText} />
+                <Input capitalize label="E-mail" placeholder="example@gmail.com" onChangeText={onChangeText} />
                 <Input isPassword label="Password" placeholder="*******" onChangeText={onChangePassword} />
 
                 <Button style={Style.button} title="Entrar" onPress={() => handleLogin()} />

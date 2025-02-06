@@ -116,7 +116,6 @@ const Home = () => {
     const renderProductItem = ({ item }: { item: productType }) => (
         <ProductHomeItem
             key={item.key}
-            onPress={() => { }}
             title={item.title}
             price={item.price}
             image={item.image}
