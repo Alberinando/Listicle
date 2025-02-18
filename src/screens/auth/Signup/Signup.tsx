@@ -8,16 +8,20 @@ import Input from '../../../components/Input/Input';
 import Checkbox from '../../../components/Checkbox/Checkbox';
 import Button from '../../../components/Button/Button';
 import { useNavigation } from '@react-navigation/native';
-import DetailsScreenNavigationProp from '../../../routers/Interface/RouterProps';
 import Style from './Style';
+import { Props } from '../../../routers/Interface/RouterProps';
+import ModalError from '../../../components/ModalError/ModalError';
 
 function SignUp() {
     const [checked, setChecked] = useState(false);
+    const [modalVisible, setModalVisible] = React.useState(false);
+    const [modalErrorTitle, setModalErrorTitle] = React.useState('');
+    const [modalErrorMessage, setModalErrorMessage] = React.useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const navigation = useNavigation<DetailsScreenNavigationProp>();
+    const navigation = useNavigation<Props>();
 
     async function handleSignUp() {
         try {
@@ -44,6 +48,12 @@ function SignUp() {
         }
     };
 
+    const showErrorModal = (title: string, message: string) => {
+        setModalErrorTitle(title);
+        setModalErrorMessage(message);
+        setModalVisible(true);
+    };
+
     function handleSignUpPress() {
         if (name !== '' && email !== '' && password !== '') {
             auth()
@@ -57,19 +67,19 @@ function SignUp() {
                 .catch(error => {
                     console.log(error);
                     if (error.code === 'auth/email-already-in-use') {
-                        Alert.alert('Alerta', 'Já existi uma conta com o endereço de email fornecido.');
+                        showErrorModal('Alerta', 'Já existi uma conta com o endereço de email fornecido.');
                     } else if (error.code === 'auth/invalid-email') {
-                        Alert.alert('Alerta', 'O endereço de e-mail não é válido.');
+                        showErrorModal('Alerta', 'O endereço de e-mail não é válido.');
                     } else if (error.code === 'auth/invalid-email-verified') {
-                        Alert.alert('Alerta', 'O e-mail é inválido.');
+                        showErrorModal('Alerta', 'O e-mail é inválido.');
                     } else if (error.code === 'auth/weak-password') {
-                        Alert.alert('Alerta', 'A senha é muito fraca.');
+                        showErrorModal('Alerta', 'A senha é muito fraca.');
                     } else {
-                        Alert.alert('Alerta', 'Ocorreu um erro ao registrar usuário: ' + error.message);
+                        showErrorModal('Alerta', 'Ocorreu um erro ao registrar usuário: ' + error.message);
                     }
                 });
         } else {
-            Alert.alert('Alerta', 'Preencha os campos');
+            showErrorModal('Alerta', 'Preencha os campos');
         }
     }
 
@@ -79,7 +89,7 @@ function SignUp() {
 
     return (
         <View style={Style.container}>
-            <StatusBar backgroundColor={colors.WHITE} barStyle={'dark-content'} />
+            <StatusBar backgroundColor={modalVisible ? colors.BLUEBACK : colors.WHITE} barStyle={modalVisible ? 'light-content' : 'dark-content'} />
             <AuthHeader title={'Voltar'} onBackPress={handlePressBack} />
 
             <Input label="Nome" placeholder="Seu nome" value={name} onChangeText={setName} />
@@ -96,6 +106,14 @@ function SignUp() {
             </View>
 
             <Button style={Style.button} title={'Inscrever-se'} onPress={handleSignUpPress} />
+            {/* Renderiza o modal de erro quando modalVisible for true */}
+            {modalVisible && (
+                <ModalError
+                    Message={modalErrorMessage}
+                    MessageTitle={modalErrorTitle}
+                    onClose={() => setModalVisible(false)}
+                />
+            )}
         </View>
     );
 }

@@ -37,6 +37,13 @@ const Style = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 30,
     },
+    buttonCont: {
+        width: '100%',
+        flexDirection: 'row',
+    },
+    botton: {
+        flex: 1,
+    },
 });
 
 export default Style;

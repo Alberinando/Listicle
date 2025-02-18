@@ -8,11 +8,11 @@ import { imageMap } from './Components/imageMap';
 const CategoryBox: React.FC<CategoryBoxProps> = ({ title, image, onPress, isFirst, isSelected }) => {
     const localImage = imageMap[image];
     return (
-        <Pressable onPress={onPress} style={[Style.container, isFirst ? Style.pressableOption : {}]}>
-            <View style={[Style.imageContainer, isSelected ? { backgroundColor: colors.DARKGREY } : {}]}>
+        <Pressable onPress={onPress} style={[Style.container, isFirst ? Style.pressableOption : {}]} testID="category-box-pressable">
+            <View testID="category-box-image-container"  style={[Style.imageContainer, isSelected ? { backgroundColor: colors.DARKGREY } : {}]}>
                 <Image style={Style.image} source={localImage} resizeMode="contain" />
             </View>
-            <Text style={[Style.title, isSelected ? Style.textOption : {}]}>{title}</Text>
+            <Text testID="category-box-text" style={[Style.title, isSelected ? Style.textOption : {}]}>{title}</Text>
         </Pressable>
     );
 };

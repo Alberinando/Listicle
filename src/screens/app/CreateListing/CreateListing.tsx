@@ -3,14 +3,14 @@ import { ScrollView, Text } from 'react-native';
 import { Style } from './Style';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Settings = () => {
+const CreateListing = () => {
     return (
         <SafeAreaView>
             <ScrollView style={Style.container}>
-                <Text>Settings</Text>
+                <Text>CreateListing</Text>
             </ScrollView>
         </SafeAreaView>
     );
 };
 
-export default React.memo(Settings);
+export default React.memo(CreateListing);

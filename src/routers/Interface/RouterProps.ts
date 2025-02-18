@@ -1,9 +1,12 @@
 import { NavigationProp } from '@react-navigation/native';
+import { productType } from '../../screens/app/Home/Interfaces/productType';
 
-type DetailsScreenNavigationProp = NavigationProp<{
-    SignIn: undefined;
-    SignUp: undefined;
-    Splash: undefined;
-}>;
+export type RootStackParamList = {
+  SignIn: undefined;
+  SignUp: undefined;
+  Splash: undefined;
+  Favorites: undefined;
+  productDetails: productType;
+};
 
-export default DetailsScreenNavigationProp;
+export type Props = NavigationProp<RootStackParamList>;

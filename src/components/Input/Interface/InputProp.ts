@@ -1,11 +1,11 @@
-import { StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, TextInputProps, ViewStyle } from 'react-native';
 
 export interface Option {
   id: string;
   title: string;
 }
 
-export interface InputProp {
+export interface InputProp extends Omit<TextInputProps, 'value'> {
   label?: string;
   isPassword?: boolean;
   placeholder?: string;
@@ -15,4 +15,5 @@ export interface InputProp {
   type?: 'text' | 'picker';
   options?: Option[];
   capitalize?: boolean;
+  testID?: string;
 }

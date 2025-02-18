@@ -5,8 +5,8 @@ import { Style } from './Style';
 
 const ProductHomeItem = ({ title, price, image, onPress }: ProductHomeItemProps) => {
     return (
-        <Pressable onPress={onPress} style={Style.container}>
-            <Image style={Style.image} source={{ uri: `${image}` }} />
+        <Pressable onPress={onPress} style={Style.container} testID="product-home-item">
+            <Image style={Style.image} source={{ uri: image }} testID="product-image" />
             <Text style={Style.title}>{title}</Text>
             <Text style={Style.price}>{price}</Text>
         </Pressable>

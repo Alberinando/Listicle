@@ -3,4 +3,5 @@ export type DataType = {
     title: string;
     status: string;
     image: string;
+    images: string[];
 };

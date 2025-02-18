@@ -4,10 +4,10 @@ import Style from './Style';
 import Button from '../../../components/Button/Button';
 import { colors } from '../../../theme/colors';
 import { useNavigation } from '@react-navigation/native';
-import DetailsScreenNavigationProp from '../../../routers/Interface/RouterProps';
+import { Props } from '../../../routers/Interface/RouterProps';
 
 function Splash() {
-    const navigation = useNavigation<DetailsScreenNavigationProp>();
+    const navigation = useNavigation<Props>();
 
     const handlePressSubscribe = () => {
         navigation.navigate('SignUp');
@@ -29,7 +29,9 @@ function Splash() {
                     <Text style={Style.title}>aqui!</Text>
                 </View>
 
-                <Button title="Inscrever-se" onPress={handlePressSubscribe} />
+                <View style={Style.buttonCont}>
+                    <Button style={Style.botton} onPress={handlePressSubscribe} title="Inscrever-se" />
+                </View>
 
                 <Pressable onPress={handlePressSignIn} hitSlop={10}>
                     <Text style={Style.footerText}>Entrar</Text>

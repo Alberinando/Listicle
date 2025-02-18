@@ -12,4 +12,13 @@ export const Style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    list: {
+        textAlign: 'center',
+        marginTop: 40,
+    },
+    refreshing: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
