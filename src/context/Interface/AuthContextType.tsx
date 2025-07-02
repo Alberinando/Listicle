@@ -5,6 +5,7 @@ type AuthContextType = {
     Auth: FirebaseAuthTypes.User | null;
     setInitializing: (value: boolean) => void;
     setUser: (user: FirebaseAuthTypes.User | null) => void;
+    logout: () => Promise<void>;
 };
 
 export default AuthContextType;
